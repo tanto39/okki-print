@@ -1,5 +1,5 @@
 <div class="reviews">
-    @if($result['slug'] != REVIEWS_SLUG)<h3>Отзывы о {{$result['title']}}</h3>@endif
+    @if($result['slug'] != REVIEWS_SLUG)<h3>Отзывы</h3>@endif
     @if(!empty($result['reviews']))
         @foreach($result['reviews'] as $review)
             <div class="review-item">

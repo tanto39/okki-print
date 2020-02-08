@@ -14,21 +14,12 @@
                         <div class="product-desc @if(empty($result['preview_img'])) full-flex-basis @endif">
                             <div class="top-product-block flex">
                                 <div class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">Цена:
-                                    <span itemprop="price">@if(isset($result['properties'][PROP_GROUP_NAME_ALL][PROP_PRICE_ID]['value'])){{$result['properties'][PROP_GROUP_NAME_ALL][PROP_PRICE_ID]['value']}}@else 0 @endif</span>
+                                    <span class="old-price">{{PRICE_OLD}}</span> / <span itemprop="price">{{PRICE_NEW}}</span>
                                     <span>руб.</span>
                                     <meta itemprop="priceCurrency" content="RUB">
                                 </div>
                                 <div class="order-box flex">
-                                    <div class="quantity-wrap">
-                                        <input class="form-control" type="number" value="1"/>
-                                    </div>
-                                    <div class="order-button-wrap">
-                                        @if ($inBasket == 'Y')
-                                            <button class="order-button add-basket-active callback_content" onclick="enterShop.showBasket()"><i class="glyphicon glyphicon-shopping-cart"></i><span>В корзине</span></button>
-                                        @else
-                                            <button class="order-button callback_content" onclick="enterShop.addToBasket({{$result['id']}}, $('.quantity-wrap input').val())"><i class="glyphicon glyphicon-shopping-cart"></i><span>В корзину</span></button>
-                                        @endif
-                                    </div>
+                                    <div class="order-button-wrap"><button class="order-button callback_content" onclick="enterShop.openShop('{{$result['properties'][PROP_GROUP_NAME_ALL][PROP_SHOPLINK_ID]['value']}}')"><i class="glyphicon glyphicon-shopping-cart"></i><span>Перейти к покупке</span></button></div>
                                 </div>
                             </div>
 
@@ -44,7 +35,8 @@
                         @endisset
                     </div>
 
-                    <div class="full_content" itemprop="description"><h2>Описание {{$result['title']}}</h2>{!! $result['full_content'] !!}</div>
+                    <div class="product-adv flex"><i class="glyphicon glyphicon-thumbs-up"></i> <p>Все размеры для мужчин, женщин, мальчиков, девочек! Качественная ткань - натуральный хлопок или дышащая и экологичная микрофибра. Сублимационная долговечная печать - краска заносится внутрь волокон навсегда.</p></div>
+                    <div class="full_content" itemprop="description">{!! $result['full_content'] !!}</div>
 
                 </div>
             </main>

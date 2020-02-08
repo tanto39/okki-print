@@ -11,35 +11,34 @@ if($template->isInstance == 'N') $template->setTemplateVariables();
         <div class="adv-wrap flex">
             <div class="adv-item">
                 <div class="adv-img adv-img-1"></div>
-                <p class="adv-title">Доступные цены</p>
-                <p class="adv-desc">Лучшие {{$template->contacts['companyWhere']}} цены</p>
+                <p class="adv-title">Качественная ткань</p>
+                <p class="adv-desc">Ткань из натурального хлопка или экологичной микрофибры</p>
             </div>
             <div class="adv-item">
                 <div class="adv-img adv-img-2"></div>
-                <p class="adv-title">Высокое качество</p>
-                <p class="adv-desc">Только официальные поставщики</p>
+                <p class="adv-title">Долговечные изображения</p>
+                <p class="adv-desc">Сублимационная печать - краска заносится внутрь волокон навсегда</p>
             </div>
             <div class="adv-item">
                 <div class="adv-img adv-img-3"></div>
-                <p class="adv-title">Многолетний опыт</p>
-                <p class="adv-desc">Мы дорожим своим авторитетом</p>
+                <p class="adv-title">Свой дизайн</p>
+                <p class="adv-desc">Возможность создать макет со своим изображением</p>
             </div>
         </div>
     </div>
 </aside>
 <main class="landing-section" itemscope="" itemtype="https://schema.org/Article">
-    <article class="container" itemprop="articleBody">
+    <div class="container" itemprop="articleBody">
         <h1 itemprop="headline">{{$result['title']}}</h1>
         @if(!empty($result['preview_img']))
             <img class="image-left" src="{{$result['preview_img'][0]['MIDDLE']}}" alt="{{$result['title']}}" title="{{$result['title']}}" />
         @endif
         {!! $result['full_content'] !!}
-    </article>
-    <button class="callback" data-target="#modal-callback" data-toggle="modal">Обратный звонок</button>
+    </div>
 </main>
 <section class="section landing-section landing-section-color">
     <div class="container catalog-categories">
-        <h2>Каталог товаров</h2>
+        <h2>Каталог одежды</h2>
         <div class="flex category-list">
             @foreach($categories as $category)
                 <a class="list-item" href="{{route('item.showCatalogCategory', ['category_slug' => $category['slug']])}}">
@@ -55,7 +54,7 @@ if($template->isInstance == 'N') $template->setTemplateVariables();
                 </a>
             @endforeach
         </div>
-        <a href="{{route('item.showCatalogCategories')}}" class="order-button order-button-link">Перейти в каталог</a>
+        <a href="/catalog/futbolki" class="order-button order-button-link">Перейти в каталог</a>
     </div>
 </section>
 

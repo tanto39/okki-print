@@ -37,7 +37,7 @@ class HomeController extends Controller
 
         // Get catalog
         $categories = Category::where('catalog_section', 1)
-            ->where('parent_id', CATALOG_ID)
+            ->where('parent_id', FUT_ID)
             ->select([
                 'title',
                 'order',

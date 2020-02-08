@@ -10,23 +10,7 @@
             <main>
                 <h1>{{$result['title']}}</h1>
 
-                <div class="flex category-desk">
-                    {{--Include Slider--}}
-                    @isset($result['preview_img'][0])
-                        <div class="detail-image">
-                            @include('public.partials.previewSlider')
-                        </div>
-                    @endisset
-
-                    <div @if(USE_CATALOG == "Y")class="category-content"@endif>
-                        <h2>{{$result['title'].' '.$template->contacts['companyWhere']}}</h2>
-                        {!! $result['full_content'] !!}
-                    </div>
-                </div>
-
-                @if(USE_CATALOG == "N")
-                    <a class="callback" download="" href="/price.xlsx">Скачать прайслист</a>
-                @endif
+                <div class="category-desk">{!! $result['full_content'] !!}</div>
 
                 {{-- Properties include --}}
                 @include('public.partials.properties')
@@ -64,7 +48,7 @@
 
                 <div class="product-list flex">
                     @foreach($items as $item)
-                        <a class="list-item" href="{{route('item.showProduct', ['category_slug' => $result['slug'], 'item_slug' => $item['slug']])}}">
+                        <a class="list-item" href="{{route('item.showProduct', ['category_slug' => $item['category']['slug'], 'item_slug' => $item['slug']])}}">
                             <div class="list-item-title">
                                 {{$item['title']}}
                             </div>
@@ -74,14 +58,7 @@
                                 @endif
                             </div>
                             <div class="price">Цена:
-                                <span>
-                                    @if(isset($item['properties'][PROP_GROUP_NAME_ALL][PROP_PRICE_ID]['value']))
-                                        {{$item['properties'][PROP_GROUP_NAME_ALL][PROP_PRICE_ID]['value']}}
-                                    @else
-                                        0
-                                    @endif
-                                        руб.
-                                </span>
+                                <span class="old-price">{{PRICE_OLD}}</span> / <span itemprop="price">{{PRICE_NEW}}</span>
                             </div>
                             <span class="order-button">Подробнее</span>
                         </a>

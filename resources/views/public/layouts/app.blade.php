@@ -13,7 +13,7 @@
     <meta name="keywords" content="{{$result['meta_key'] ?? META_KEY}}" />
     <meta name="description" content="{{$result['meta_desc'] ?? META_DESC}}" />
 
-    <title>{{$result['title'] ?? META_TITLE}}</title>
+    <title>{{$result['description'] ?? META_TITLE}}</title>
 
     <!-- Scripts -->
     <script defer src="{{ asset('js/app.js') }}"></script>
@@ -26,76 +26,65 @@
 
     <header class="header" id="header">
 
-        @if(USE_REGION == "Y")
-            @include('public.partials.region')
-        @endif
-
         <div class="container flex center-header">
-            <div class="header-left">
-
-                @if ($template->uri != "/")
-                <a class="logo" href="/">{{COMPANY}}</a>
-                @else
-                <a class="logo" href="#">{{COMPANY}}</a>
-                @endif
-
-                <div class="address">{{$template->contacts['address']}}</div>
-            </div>
-
-            <div class="header-center flex">
-                <div class="header-center-wrap">
-                    <div class="header-phone flex"><i class="glyphicon glyphicon-earphone"></i><span>{{$template->contacts['phone']}}</span></div>
-                    <a class="header-mail flex" href="mailto:{{$template->contacts['mail']}}"><i class="glyphicon glyphicon-envelope"></i><span>{{$template->contacts['mail']}}</span></a>
-                </div>
-            </div>
-            <div class="header-right flex">
-                    <div class="header-right-wrap">
-                    <button class="callback" data-target="#modal-callback" data-toggle="modal">Обратный звонок</button>
-
-                    @if(USE_CATALOG == "Y")
-                        <a class="basket-button" href="{{route('item.basket')}}">
-                            <i class="glyphicon glyphicon-shopping-cart"></i>
-                            <span>Корзина</span>
-                        </a>
-                    @else
-                        <a class="basket-button" href="{{route('item.showCatalogCategories')}}">
-                            <i class="glyphicon glyphicon-shopping-cart"></i>
-                            <span>Прайслист</span>
-                        </a>
-                    @endif
-
-                </div>
-            </div>
-        </div>
-    </header><!-- .header-->
-
-    <nav class="topmenu-wrap">
-        <div class="navbar navbar-default container topmenu">
-
-            <!-- Include menu -->
-            @component('public.components.menu')
-                @slot('menuSlug') main @endslot
-            @endcomponent
+@if ($template->uri != "/")<a class="logo" href="/"><img src="/images/logo.jpg" alt="OKKI" title="OKKI"/></a>
+@else
+<a class="logo" href="#"><img src="/images/logo.jpg" alt="OKKI" title="OKKI"/></a>
+@endif
+<nav class="header-center flex">
+    @if ($template->uri != "dostavka") <a href="/dostavka">Доставка и оплата</a> @else <a href="#">Доставка и оплата</a> @endif
+    @if ($template->uri != "obmen") <a href="/obmen">Обмен и возврат</a> @else <a href="#">Обмен и возврат</a> @endif
+    @if ($template->uri != "faq") <a href="/faq">FAQ</a> @else <a href="#">FAQ</a> @endif
+</nav>
 
             <!-- Include search -->
             @component('public.components.search')
             @endcomponent
 
-            <!-- Authentication Links -->
-            {{--@include('public.partials.loginlinks')--}}
         </div>
-    </nav>
+    </header><!-- .header-->
+
+    <div class="info-wrap">
+        <div class="container flex center-header">
+            <nav class="navbar navbar-default topmenu">
+                <!-- Include menu -->
+                @component('public.components.menu')
+                    @slot('menuSlug') main @endslot
+                @endcomponent
+            </nav>
+
+            <div class="header-center">
+                <div class="top-info">Телефон горячей линии (08:00 - 22:00): <div>{{$template->contacts['phone']}}</div></div>
+            </div>
+            <div class="info-right">
+                <button class="callback" onclick="enterShop.openShop('https://okki.myprintbar.ru/svoy-dizayn/')">Свой дизайн</button>
+            </div>
+
+        </div>
+        <!-- Authentication Links -->
+            {{--@include('public.partials.loginlinks')--}}
+
+    </div>
     <!-- Include massage -->
     @include('public.partials.msg')
 
     <!-- Include content -->
     @yield('content')
 
-    <section class="landing-section section-map">
-        <h2>Мы на карте</h2>
-        <div class="yandex-map">
-            <div class="map-load">Загрузка карты...</div>
-            {!!$template->contacts['map']!!}
+    <section class="landing-section landing-adv">
+        <div class="container flex adv-body">
+            <div class="flex">
+                <img src="/images/portfel.svg">
+                <div class="adv-body-text">Простой возврат и обмен в течение недели</div>
+            </div>
+            <div class="flex">
+                <img src="/images/track.svg">
+                <div class="adv-body-text">Быстрая доставка по России и СНГ</div>
+            </div>
+            <div class="flex">
+                <img src="/images/48-hour.svg">
+                <div class="adv-body-text">Производство изделия 48 часов</div>
+            </div>
         </div>
     </section>
 
@@ -103,14 +92,15 @@
         <div class="container">
             <div class="contact flex" itemscope itemtype="http://schema.org/LocalBusiness" >
                 <div class="footer-block">
-                    <div class="fn org" itemprop="name"><span class="category">ООО </span>{{COMPANY}}</div>
+                    <div class="fn org" itemprop="name"><span class="category">Магазин </span>{{COMPANY}}</div>
                     <div class="tel" itemprop="telephone">{{$template->contacts['phone']}}</div>
-                    <div>Адрес: <span itemprop="address">{{$template->contacts['address']}}</span></div>
+                    <div itemprop="address">{{$template->contacts['address']}}</div>
                     <div class="email" itemprop="email">{{$template->contacts['mail']}}</div>
                     <div>Все права защищены</div>
                 </div>
-                <div class="footer-block text-right">
-                    <div>Время работы: <span class="workhours" itemprop="openingHours">Все дни недели 10:00 - 22:00</span></div>
+                <div class="footer-block text-right flex">
+                    <button class="callback" data-target="#modal-callback" data-toggle="modal">Задать вопрос</button>
+                    <div>Время работы: <span class="workhours" itemprop="openingHours">Все дни недели 08:00 - 22:00</span></div>
                     <div class="metrica"><img alt="" title="" src="/images/metrika.png"></div>
                     <div class="enterkursk">Сайт разработан <a target="_blank" href="https://enterkursk.ru">EnterKursk.ru</a></div>
                 </div>

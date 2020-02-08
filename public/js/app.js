@@ -154,98 +154,10 @@ var enterShop = {
     },
 
     /**
-     * Add product to basket
-     * @param productId
-     * @param quantity
-     */
-    addToBasket: function (productId, quantity) {
-        if (!quantity || (quantity == 0) || (quantity < 0)) {
-            quantity = 1;
-        }
-
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-
-        $.ajax({
-            type: "POST",
-            url: "/addtobasket",
-            data: {productId:productId,quantity:quantity},
-            success: function(data) {
-                $('.order-button-wrap').html('<button class="order-button add-basket-active callback_content" onclick="enterShop.showBasket()">' +
-                    '<i class="glyphicon glyphicon-shopping-cart"></i>' +
-                    '<span>В корзине</span></button>');
-            }
-        });
-    },
-
-    /**
      * Show basket
      */
-    showBasket: function () {
-        location.href = '/basket';
-    },
-
-    /**
-     * Set quantity in basket
-     *
-     * @param productId
-     * @param quantity
-     */
-    setQuantityBasket: function (productId, quantity) {
-        if (!quantity || (quantity == 0) || (quantity < 0)) {
-            quantity = 1;
-        }
-
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-
-        $.ajax({
-            type: "POST",
-            url: "/addtobasket",
-            data: {productId:productId,quantity:quantity},
-            success: function(data) {
-                location.reload();
-            }
-        });
-    },
-
-    /**
-     * Set delivery
-     *
-     * @param deliveryPrice
-     * @param allPrice
-     */
-    setDelivery: function (deliveryPrice, allPrice) {
-        allPrice = parseInt(allPrice);
-        deliveryPrice = parseInt(deliveryPrice);
-        allPrice += deliveryPrice;
-        $('.sum-price').text(allPrice);
-    },
-
-    /**
-     * Set region
-     */
-    setRegion: function () {
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-
-        $.ajax({
-            type: "POST",
-            url: "/setregion",
-            data: {regionId:regionId},
-            success: function(data) {
-                location.reload();
-            }
-        });
+    openShop: function (src) {
+        location.href = src;
     },
 
 }

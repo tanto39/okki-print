@@ -18,6 +18,7 @@ define("CATALOG_TITLE", 'Каталог');
 // Content id
 define("CATALOG_ID", 5);
 define("BLOG_ID", 1);
+define("FUT_ID", 6);
 
 // Images
 define("PREV_IMG_FULL_WIDTH", 1200);
@@ -41,6 +42,12 @@ define("PROP_TYPE_ITEM_LINK", 8);
 
 define("PROP_GROUP_NAME_ALL", 'Характеристики');
 define("PROP_PRICE_ID", 14);
+define("PROP_SHOPLINK_ID", 19);
+
+// Price
+define("PRICE_NEW", 999);
+define("PRICE_OLD", 1499);
+
 
 // Array of properties to sort in public catalog
 define("AR_PROP_SORT", [PROP_PRICE_ID, 17]);
@@ -60,7 +67,7 @@ define("META_DESC", "Добро пожаловать в наш интернет 
 define("COMPANY", "OKKI");
 define("COMPANY_WHERE", "");
 define("PHONE", "8 (495) 268-08-28");
-define("ADDRESS", "г. Курск, ул. Пушкина, 8");
+define("ADDRESS", "Россия и страны СНГ");
 define("MAIL", "info@okki-print.ru");
 define("COMPANY_MAP", "<script defer async src=\"https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3AYWBlETvV_7SlsILrBhnqigPl7yE_Wk5d&amp;width=100%25&amp;height=358&amp;lang=ru_RU&amp;scroll=false\"></script>");
 
