@@ -1,7 +1,7 @@
 <?php
 // Site settings
 define("ADMIN_EMAIL", 'tanto39@mail.ru');
-define("HOST_PATH", 'http://okki-print/');
+define("HOST_PATH", 'https://okki-print.ru/');
 
 // Pagination
 define("PAGE_COUNT", 21);
