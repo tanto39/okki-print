@@ -73,22 +73,22 @@
     <!-- Include content -->
     @yield('content')
 
-    <section class="landing-section landing-adv">
+    <div class="landing-section landing-adv">
         <div class="container flex adv-body">
             <div class="flex">
-                <img src="/images/portfel.svg">
+                <img src="/images/portfel.svg" alt="Простой возврат" title="Простой возврат">
                 <div class="adv-body-text">Простой возврат и обмен в течение недели</div>
             </div>
             <div class="flex">
-                <img src="/images/track.svg">
+                <img src="/images/track.svg" alt="Быстрая доставка" title="Быстрая доставка">
                 <div class="adv-body-text">Быстрая доставка по России и СНГ</div>
             </div>
             <div class="flex">
-                <img src="/images/48-hour.svg">
+                <img src="/images/48-hour.svg" alt="Производство" title="Производство">
                 <div class="adv-body-text">Производство изделия 48 часов</div>
             </div>
         </div>
-    </section>
+    </div>
 
     <footer class="footer" id="footer">
         <div class="container">
@@ -103,7 +103,7 @@
                 <div class="footer-block text-right flex">
                     <button class="callback" data-target="#modal-callback" data-toggle="modal">Задать вопрос</button>
                     <div>Время работы: <span class="workhours" itemprop="openingHours">Все дни недели 08:00 - 22:00</span></div>
-                    <div class="metrica"><!-- Yandex.Metrika informer --> <a href="https://metrika.yandex.ru/stat/?id=57437746&amp;from=informer" target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/57437746/3_1_FFFFFFFF_EFEFEFFF_0_pageviews" style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" class="ym-advanced-informer" data-cid="57437746" data-lang="ru" /></a> <!-- /Yandex.Metrika informer --> <!-- Yandex.Metrika counter --> <script type="text/javascript" > (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(57437746, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true }); </script> <noscript><div><img src="https://mc.yandex.ru/watch/57437746" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter --></div>
+                    <div class="metrica"><a href="https://metrika.yandex.ru/stat/?id=57437746&amp;from=informer" target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/57437746/3_1_FFFFFFFF_EFEFEFFF_0_pageviews" style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" class="ym-advanced-informer" data-cid="57437746" data-lang="ru" /></a><script> (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(57437746, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true }); </script> <noscript><div><img src="https://mc.yandex.ru/watch/57437746" style="position:absolute; left:-9999px;" alt="" /></div></noscript></div>
                     <div class="enterkursk">Сайт разработан <a target="_blank" href="https://enterkursk.ru">EnterKursk.ru</a></div>
                 </div>
             </div>
