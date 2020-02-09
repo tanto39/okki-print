@@ -3,6 +3,7 @@ Disallow: /admin/
 Disallow: /vendor/
 Disallow: /faq/
 Disallow: /obmen/
+Disallow: /blog/
 Disallow: /*.php&
 Disallow: /*mail.php
 Disallow: /*index.php*
