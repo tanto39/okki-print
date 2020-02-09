@@ -12,6 +12,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="keywords" content="{{$result['meta_key'] ?? META_KEY}}" />
     <meta name="description" content="{{$result['meta_desc'] ?? META_DESC}}" />
+    <meta name="google-site-verification" content="h1Nzrxm5CGSR4luApIdMkt_WlU9j8p9wS3L6QSFUNYg" />
+    <meta name="yandex-verification" content="04db446b542740a7" />
 
     <title>{{$result['description'] ?? META_TITLE}}</title>
 
