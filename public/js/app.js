@@ -154,10 +154,10 @@ var enterShop = {
     },
 
     /**
-     * Show basket
+     * Open link
      */
     openShop: function (src) {
-        location.href = src;
+        window.open(src, '_blank');
     },
 
 }
