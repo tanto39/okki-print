@@ -23,7 +23,6 @@
                             </td>
                         @elseif($property['type'] == PROP_TYPE_ITEM_LINK)
                             <td colspan="2">
-                                <p>{{$property['title']}}</p>
                                 @if(!empty($property['arItem']))
                                     <div class="property-item-link flex">
                                         @foreach($property['arItem'] as $key=>$linkItem)
