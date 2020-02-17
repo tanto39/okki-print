@@ -396,6 +396,7 @@ p.adv-desc {margin: 0;color: #636262;padding: 0 1em;}
 .property-item-link-title{height: 10vh;}
 .property-item-link-block:hover {text-decoration: none;background: #cdd6e6;}
 .property-item-link-img {max-width: 100%;}
+.no-display{display:none;}
 
 /*--- product list -----*/
 .list-item{

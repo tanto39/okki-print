@@ -11,7 +11,8 @@
                     @if($property['id'] !== PROP_SHOPLINK_ID && !empty($property['value']))
                     <tr>
                         @if($property['type'] == PROP_TYPE_IMG)
-                            <td colspan="2">
+                        <td class="no-display">{{$property['title']}}</td>
+                            <td>
                                 <p>{{$property['title']}}</p>
                                 <div class="property-image flex">
                                     @foreach($property['value'] as $key=>$photo)
@@ -22,7 +23,8 @@
                                 </div>
                             </td>
                         @elseif($property['type'] == PROP_TYPE_ITEM_LINK)
-                            <td colspan="2">
+                            <td class="no-display">{{$property['title']}}</td>
+                            <td>
                                 @if(!empty($property['arItem']))
                                     <div class="property-item-link flex">
                                         @foreach($property['arItem'] as $key=>$linkItem)
@@ -37,7 +39,8 @@
                                 @endif
                             </td>
                         @elseif($property['type'] == PROP_TYPE_CATEGORY_LINK)
-                            <td colspan="2">
+                            <td class="no-display">{{$property['title']}}</td>
+                            <td>
                                 <p>{{$property['title']}}</p>
                                 @if(!empty($property['arItem']))
                                     <div class="property-item-link flex">
