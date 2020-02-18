@@ -58,7 +58,7 @@
                                 @endif
                             </div>
                             <div class="price">Цена:
-                                <span class="old-price">{{PRICE_OLD}}</span> / <span itemprop="price">{{PRICE_NEW}}</span>
+                                <span class="old-price">{{PRICE_OLD}}</span> / <span>{{PRICE_NEW}}</span>
                             </div>
                             <span class="order-button">Подробнее</span>
                         </a>
