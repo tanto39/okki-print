@@ -19,7 +19,8 @@
                                     <meta itemprop="priceCurrency" content="RUB">
                                 </div>
                                 <div class="order-box flex">
-                                    <div class="order-button-wrap"><button class="order-button callback_content" onclick="enterShop.openShop('{{$result['properties'][PROP_GROUP_NAME_ALL][PROP_SHOPLINK_ID]['value']}}')"><i class="glyphicon glyphicon-shopping-cart"></i><span>Перейти к покупке</span></button></div>
+                                <button class="order-button callback_content" onclick="enterShop.openShop('{{$result['properties'][PROP_GROUP_NAME_ALL][PROP_SHOPLINK_ID]['value']}}')"><span>Подробнее о товаре</span></button>
+                                <button class="order-button" onclick="enterShop.openShop('{{$result['properties'][PROP_GROUP_NAME_ALL][PROP_SHOPLINK_ID]['value']}}')"><i class="glyphicon glyphicon-shopping-cart"></i><span>Купить</span></button>
                                 </div>
                             </div>
 
