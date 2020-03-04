@@ -43,6 +43,7 @@ define("PROP_TYPE_ITEM_LINK", 8);
 define("PROP_GROUP_NAME_ALL", 'Характеристики');
 define("PROP_PRICE_ID", 14);
 define("PROP_SHOPLINK_ID", 19);
+define("PROP_SHOPLINK2_ID", 32);
 
 // Price
 define("PRICE_NEW", 999);

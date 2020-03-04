@@ -3,7 +3,7 @@
 @section('content')
     <div class="container main">
 
-        <div class="item-page product-detail">
+        <div class="item-page product-detail" data-shop="{{$result['properties'][PROP_GROUP_NAME_ALL][PROP_SHOPLINK_ID]['value'] ?? ''}}" data-shop2="{{$result['properties'][PROP_GROUP_NAME_ALL][PROP_SHOPLINK2_ID]['value'] ?? $result['properties'][PROP_GROUP_NAME_ALL][PROP_SHOPLINK_ID]['value']}}" data-cat-id="{{$result['category']['parent_id'] ?? ''}}">
             {{-- Breadcrumbs include --}}
             @include('public.partials.breadcrumbs')
             <main itemscope itemtype="http://schema.org/Product">
@@ -19,8 +19,8 @@
                                     <meta itemprop="priceCurrency" content="RUB">
                                 </div>
                                 <div class="order-box flex">
-                                <button class="order-button callback_content" onclick="enterShop.openShop('{{$result['properties'][PROP_GROUP_NAME_ALL][PROP_SHOPLINK_ID]['value']}}')"><span>Подробнее о товаре</span></button>
-                                <button class="order-button" onclick="enterShop.openShop('{{$result['properties'][PROP_GROUP_NAME_ALL][PROP_SHOPLINK_ID]['value']}}')"><i class="glyphicon glyphicon-shopping-cart"></i><span>Купить</span></button>
+                                <button class="order-button callback_content age-default"><span>Подробнее о товаре</span></button>
+                                <button class="order-button"><i class="glyphicon glyphicon-shopping-cart"></i><span>Купить</span></button>
                                 </div>
                             </div>
 
@@ -36,7 +36,16 @@
                         @endisset
                     </div>
 
-                    <div class="product-adv flex"><i class="glyphicon glyphicon-thumbs-up"></i> <p>Все размеры для мужчин, женщин, мальчиков, девочек! Качественная ткань - натуральный хлопок или дышащая и экологичная микрофибра. Сублимационная долговечная печать - краска заносится внутрь волокон навсегда.</p></div>
+                    <p class="age-title">Посмотреть этот товар для:</p>
+                    <div class="age-box flex">
+                        <button class="order-button age-man">Мужчин</button>
+                        <button class="order-button age-woman">Женщин</button>
+                        <button class="order-button age-boy">Мальчиков</button>
+                        <button class="order-button age-girl">Девочек</button>
+                    </div>
+                    <button class="order-button size-table">Таблица размеров</button>
+
+                    <div class="product-adv flex"><i class="glyphicon glyphicon-thumbs-up"></i> <p>Качественная ткань - натуральный хлопок или дышащая и экологичная микрофибра! Сублимационная долговечная печать - краска заносится внутрь волокон навсегда.</p></div>
                     <div class="full_content" itemprop="description">{!! $result['full_content'] !!}</div>
 
                 </div>

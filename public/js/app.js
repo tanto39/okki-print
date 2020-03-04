@@ -120,6 +120,12 @@ $(document).ready(function () {
     //ссылка на  соглашение
     $(".form-pd a").attr("href", "/pd.docx");
 
+    // open shop link
+    $('.product-detail .order-button').click(function (event) {
+        event.preventDefault();
+        enterShop.openShop($(this));
+    });
+
 });
 
 
@@ -156,7 +162,39 @@ var enterShop = {
     /**
      * Open link
      */
-    openShop: function (src) {
+    openShop: function (button) {
+        if ($('.product-detail').attr('data-cat-id') == 6) {
+            var catMan = 'muzhskiye-futbolki';
+            var catWoman = 'zhenskiye-futbolki';
+            var catGirl = 'detskiye-futbolki-dlya-devochek';
+            var catBoy = 'detskiye-futbolki-dlya-machikov';
+        }
+        var src = $('.product-detail').attr('data-shop');
+        var src2 = $('.product-detail').attr('data-shop2');
+        var defaultLinkArray = src.split('/');
+        var defaultLinkArray2 = src2.split('/');
+
+        if (button.hasClass('age-woman') && defaultLinkArray[3] == catMan){
+            src = src2;
+        }
+        if (button.hasClass('age-man') && defaultLinkArray[3] == catWoman){
+            src = src2;
+        }
+        if (button.hasClass('age-girl')){
+            if (defaultLinkArray[3] == catMan)
+                defaultLinkArray[4] = defaultLinkArray2[4];
+
+            defaultLinkArray[3] = catGirl;
+            src = defaultLinkArray.join('/');
+        }
+        if (button.hasClass('age-boy')){
+            if (defaultLinkArray[3] == catWoman)
+                defaultLinkArray[4] = defaultLinkArray2[4];
+
+            defaultLinkArray[3] = catBoy;
+            src = defaultLinkArray.join('/');
+        }
+
         window.open(src, '_blank');
     },
 
