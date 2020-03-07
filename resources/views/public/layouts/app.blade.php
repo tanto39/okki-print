@@ -59,7 +59,7 @@
                 <div class="top-info">Телефон горячей линии (08:00 - 22:00): <div>{{$template->contacts['phone']}}, 8 (920) 721-33-46</div></div>
             </div>
             <div class="info-right">
-                <button class="callback" onclick="enterShop.openShop('https://okki.myprintbar.ru/svoy-dizayn/')">Свой дизайн</button>
+                <button class="callback">Свой дизайн</button>
             </div>
 
         </div>

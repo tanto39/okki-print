@@ -126,6 +126,11 @@ $(document).ready(function () {
         enterShop.openShop($(this));
     });
     
+    $('.info-right .callback').click(function (event) {
+        event.preventDefault();
+        enterShop.openCreate();
+    });
+    
     // chat
     (function () {
         window['yandexChatWidgetCallback'] = function() {
@@ -218,6 +223,10 @@ var enterShop = {
         }
 
         window.open(src, '_blank');
+    },
+    
+    openCreate: function () {
+        window.open('https://okki.myprintbar.ru/svoy-dizayn/', '_blank');
     },
 
 }
