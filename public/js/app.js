@@ -125,6 +125,28 @@ $(document).ready(function () {
         event.preventDefault();
         enterShop.openShop($(this));
     });
+    
+    // chat
+    (function () {
+        window['yandexChatWidgetCallback'] = function() {
+            try {
+                window.yandexChatWidget = new Ya.ChatWidget({
+                    guid: 'fac9bd39-336f-48ef-a64d-cbb736f428dd',
+                    buttonText: 'Задать вопрос',
+                    title: 'Задать вопрос',
+                    theme: 'dark',
+                    collapsedDesktop: 'never',
+                    collapsedTouch: 'always'
+                });
+            } catch(e) { }
+        };
+        var n = document.getElementsByTagName('script')[0],
+            s = document.createElement('script');
+        s.async = true;
+        s.charset = 'UTF-8';
+        s.src = 'https://chat.s3.yandex.net/widget.js';
+        n.parentNode.insertBefore(s, n);
+    })();
 
 });
 
