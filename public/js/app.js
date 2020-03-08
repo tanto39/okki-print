@@ -118,7 +118,10 @@ $(document).ready(function () {
     });
 
     //ссылка на  соглашение
-    $(".form-pd a").attr("href", "/pd.docx");
+	$('.form-pd a').click(function (event) {
+        event.preventDefault();
+        enterShop.openLink("/pd.docx");
+    });
 
     // open shop link
     $('.product-detail .order-button').click(function (event) {
@@ -128,7 +131,7 @@ $(document).ready(function () {
     
     $('.info-right .callback').click(function (event) {
         event.preventDefault();
-        enterShop.openCreate();
+        enterShop.openLink('https://okki.myprintbar.ru/svoy-dizayn/');
     });
     
     // chat
@@ -225,8 +228,8 @@ var enterShop = {
         window.open(src, '_blank');
     },
     
-    openCreate: function () {
-        window.open('https://okki.myprintbar.ru/svoy-dizayn/', '_blank');
+    openLink: function (href) {
+        window.open(href, '_blank');
     },
 
 }
