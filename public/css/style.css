@@ -736,7 +736,7 @@ p.age-title{
     .region-form .form-buttons{margin: 5px;}
     .navbar-nav{margin:15px;}
     .navbar, .info-right, .info-right .callback{width: 100%;}
-    .item-page h1{margin: 0;}
+    .item-page h1, .top-info{margin: 0;}
     .adv-item{margin-top: 20px;}
     .center-header{text-align: center;}
     .product-list .price, .list-item-title{font-size: 1.2em;}
