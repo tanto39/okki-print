@@ -67,7 +67,7 @@ define("META_DESC", "Добро пожаловать в наш интернет 
 // Contacts
 define("COMPANY", "OKKI");
 define("COMPANY_WHERE", "");
-define("PHONE", "8 (495) 268-08-28");
+define("PHONE", "8 (920) 721-33-46");
 define("ADDRESS", "Россия и страны СНГ");
 define("MAIL", "info@okki-print.ru");
 define("COMPANY_MAP", "<script defer async src=\"https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3AYWBlETvV_7SlsILrBhnqigPl7yE_Wk5d&amp;width=100%25&amp;height=358&amp;lang=ru_RU&amp;scroll=false\"></script>");
