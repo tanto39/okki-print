@@ -216,7 +216,13 @@ h4{font-size: 1.4em;}
     -ms-flex-preferred-size: 56%;
     width: 56%;
 }
-.order-box .callback_content, .top-product-block .order-box{
+.top-product-block .order-box{
+    flex-basis: 62%;
+    -webkit-flex-basis: 62%;
+    -ms-flex-preferred-size: 59%;
+    width: 62%;
+}
+.order-box .callback_content{
     flex-basis: 63%;
     -webkit-flex-basis: 63%;
     -ms-flex-preferred-size: 60%;
@@ -478,6 +484,7 @@ p.age-title{
 }
 .product-wrap .detail-image{margin:0;}
 .order-button span{padding: 0 0 0 0.4em;}
+.order-box .callback_content span{padding: 0;}
 .quantity-wrap input{padding-left: 6px;}
 .product-adv{
     background: #dedede;
