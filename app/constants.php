@@ -46,7 +46,7 @@ define("PROP_SHOPLINK_ID", 19);
 define("PROP_SHOPLINK2_ID", 32);
 
 // Price
-define("PRICE_NEW", 1099);
+define("PRICE_NEW", 999);
 define("PRICE_OLD", 1599);
 
 
