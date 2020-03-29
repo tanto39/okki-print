@@ -72,12 +72,6 @@
 
     <!-- Include content -->
     @yield('content')
-    <div class="landing-section">
-        <div class="container">
-            <h3>Видео с демонстрацией изделий и производства</h3>
-            <iframe width="700" height="400" src="https://www.youtube.com/embed/MB20vEU3oy0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-    </div>
 
     <div class="landing-section landing-adv">
         <div class="container flex adv-body">
