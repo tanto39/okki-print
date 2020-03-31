@@ -1,4 +1,5 @@
 /node_modules
+/app/constants.php
 /public/hot
 /public/images
 /public/files
