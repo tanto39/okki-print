@@ -325,7 +325,7 @@ h4{font-size: 1.4em;}
 .header-center a:hover {color: #007aff; text-decoration: none;}
 .header, .header a{color: #fff;}
 .info-right{
-    width: 24%;
+    width: 23%;
     padding: 0 0 0 1.2em;
 }
 .logo img{width:100%;}
@@ -588,6 +588,7 @@ p.age-title{
 .socbuttons{position: fixed; display: block; right: 0.3rem; top: 36vh;}
 .socbuttons .ya-share2__container_size_m .ya-share2__icon{height: 7vh;width: 7vh;}
 .socbuttons .ya-share2__item, .socbuttons .ya-share2__list_direction_horizontal > .ya-share2__item{display: block; margin-top: 0.5rem;}
+.ya-share2__container_size_m .ya-share2__icon{background-size: auto !important;}
 
 /*---scroll---*/
 .scroll{

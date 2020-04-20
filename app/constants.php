@@ -47,7 +47,7 @@ define("PROP_SHOPLINK2_ID", 32);
 
 // Price
 define("PRICE_NEW", 999);
-define("PRICE_OLD", 1599);
+define("PRICE_OLD", 1699);
 
 
 // Array of properties to sort in public catalog
