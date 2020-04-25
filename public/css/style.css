@@ -284,7 +284,7 @@ h4{font-size: 1.4em;}
 .search-form input{
     flex-basis: 80%;
     -webkit-flex-basis: 80%;
-    -ms-flex-preferred-size: 80%;
+    -ms-flex-preferred-size: 75%;
     width: 80%;
     border-radius: 0;
     border-top-left-radius: 0.3em;
@@ -310,7 +310,7 @@ h4{font-size: 1.4em;}
 .header-center{
     flex-basis: 63%;
     -webkit-flex-basis: 63%;
-    -ms-flex-preferred-size: 63%;
+    -ms-flex-preferred-size: 46%;
     width: 63%;
     padding: 0 4em;
 }
@@ -440,7 +440,7 @@ p.adv-desc {margin: 0;color: #636262;padding: 0 1em;}
 .list-item{
     flex-basis: 32%;
     -webkit-flex-basis: 32%;
-    -ms-flex-preferred-size: 32%;
+    -ms-flex-preferred-size: 43%;
     width: 32%;
     margin: 0.1em;
     padding: 1em;
