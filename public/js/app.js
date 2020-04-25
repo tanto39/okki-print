@@ -142,7 +142,7 @@ $(document).ready(function () {
                     guid: 'fac9bd39-336f-48ef-a64d-cbb736f428dd',
                     buttonText: 'Задать вопрос',
                     title: 'Задать вопрос',
-                    theme: 'dark',
+                    theme: 'light',
                     collapsedDesktop: 'never',
                     collapsedTouch: 'always'
                 });

@@ -4,7 +4,7 @@ define("ADMIN_EMAIL", 'tanto39@mail.ru');
 define("HOST_PATH", 'https://okki-print.ru/');
 
 // Pagination
-define("PAGE_COUNT", 21);
+define("PAGE_COUNT", 51);
 
 // Slugs
 define("BLOG_SLUG", 'blog');
