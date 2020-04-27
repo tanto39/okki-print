@@ -86,6 +86,10 @@ class CategoryController extends Controller
 
         $category = $this->handleCategoryArray($category);
 
+        if(!empty($request->get('page'))) {
+            $category['full_content'] = $category['meta_desc'];
+        }
+
         if (!empty($category['children']))
             foreach ($category['children'] as $key=>$child)
                 $category['children'][$key] = $this->handleCategoryArray($child);

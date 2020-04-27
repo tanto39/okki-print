@@ -10,6 +10,10 @@ Disallow: /*index.php*
 Disallow: /*setfilter*
 Disallow: /*page=*
 Disallow: /*index.html*
+Allow: /catalog/futbolki?page=2
+Allow: /catalog/futbolki?page=3
+Allow: /catalog?page=2
+Allow: /catalog?page=3
 Allow: /sitemap.xml
 Allow: /*.js
 Allow: /*.css
