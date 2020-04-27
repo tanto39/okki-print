@@ -155,7 +155,7 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function showCatalogCategories()
+    public function showCatalogCategories(Request $request)
     {
         $template = TemplateController::getInstance();
         if($template->isInstance == 'N') $template->setTemplateVariables();
@@ -168,9 +168,20 @@ class CategoryController extends Controller
             foreach ($category['children'] as $key=>$child)
                 $category['children'][$key] = $this->handleCategoryArray($child);
 
+        // Items
+        $items = $this->getItems($category, 1, $request);
+        $items = $this->handleItemsArray($items);
+
+        $itemsLink = $this->arrayPaginate($request, $items);
+
+        // Get items for current page
+        $items = $this->getCurrentPageItems($request, $items);
+
         return view('public/catalog/categories', [
             'result' => $category,
-            'template' => $template
+            'template' => $template,
+            'items' => $items,
+            'itemsLink' => $itemsLink
         ]);
     }
 

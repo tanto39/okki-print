@@ -35,7 +35,7 @@ class BreadcrumbController extends Controller
             case 'item.showCatalogCategory':
                 $category = self::selectCategory($uriParts[1], CATALOG_SLUG, 1, 'Y');
                 self::selectParentCategories($category, CATALOG_SLUG, CATALOG_ID, 1);
-                self::setMainLink(CATALOG_SLUG, CATALOG_TITLE, 'N');
+                //self::setMainLink(CATALOG_SLUG, CATALOG_TITLE, 'N');
             break;
 
             case 'item.showBlogCategories':
@@ -57,7 +57,7 @@ class BreadcrumbController extends Controller
                 self::selectItem($uriParts[2], 1);
                 $category = self::selectCategory($uriParts[1], CATALOG_SLUG, 1, 'N');
                 self::selectParentCategories($category, CATALOG_SLUG, CATALOG_ID, 1);
-                self::setMainLink(CATALOG_SLUG, CATALOG_TITLE, 'N');
+                //self::setMainLink(CATALOG_SLUG, CATALOG_TITLE, 'N');
             break;
 
             case 'item.showUncaterorised':

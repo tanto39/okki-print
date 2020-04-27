@@ -29,6 +29,34 @@
                     </div>
                 @endisset
             </main>
+
+            @if(!empty($items) && USE_CATALOG == "Y")
+                <h2>Товары</h2>
+
+                <div class="product-list flex">
+                    @foreach($items as $item)
+                        <a class="list-item" href="{{route('item.showProduct', ['category_slug' => $item['category']['slug'], 'item_slug' => $item['slug']])}}">
+                            <div class="list-item-title">
+                                {{$item['title']}}
+                            </div>
+                            <div class="wrap-image-list flex">
+                                @if(isset($item['preview_img'][0]))
+                                    <img class="list-item-img" src="{{$item['preview_img'][0]['MIDDLE']}}" alt="{{$item['title']}}" title="{{$item['title']}}"/>
+                                @endif
+                            </div>
+                            <div class="price">Цена:
+                                <span class="old-price">{{PRICE_OLD}}</span> / <span>{{PRICE_NEW}}</span>
+                            </div>
+                            <span class="order-button">Подробнее</span>
+                        </a>
+                    @endforeach
+                </div>
+            @endif
+
+            <div class="pagination-wrap">
+                {!!$itemsLink!!}
+            </div>
+
         </div>
     </div>
     

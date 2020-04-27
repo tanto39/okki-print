@@ -107,20 +107,21 @@ trait CategoryTrait
     public function getItems($category, $isProduct, $request)
     {
         $items = new Item();
-
-        //get child categories
-        $childCategories = Category::where('parent_id', $category['id'])->select(['id'])->get()->toArray();
-
         $items = $items->with('category');
 
-        if(!empty($childCategories)) {
-            foreach ($childCategories as $key=>$arCategory)
-                $childCategories[$key] = $arCategory['id'];
-            $childCategories[] = $category['id'];
-            $items = $items->whereIn('category_id', $childCategories);
-        }
-        else {
-            $items = $items->where('category_id', $category['id']);
+        if ( $category['id'] != CATALOG_ID) {
+            //get child categories
+            $childCategories = Category::where('parent_id', $category['id'])->select(['id'])->get()->toArray();
+
+            if(!empty($childCategories)) {
+                foreach ($childCategories as $key=>$arCategory)
+                    $childCategories[$key] = $arCategory['id'];
+                $childCategories[] = $category['id'];
+                $items = $items->whereIn('category_id', $childCategories);
+            }
+            else {
+                $items = $items->where('category_id', $category['id']);
+            }
         }
 
         // get items
