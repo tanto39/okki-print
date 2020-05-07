@@ -273,7 +273,7 @@ trait FilterController
 
         //$requestUri = url()->getRequest()->getRequestUri();
 
-        $selectTable = $selectTable->get(); //paginate(PAGE_COUNT);
+        //$selectTable = $selectTable->get(); //paginate(PAGE_COUNT);
         //$selectTable->setPath($requestUri);
 
         return $selectTable;

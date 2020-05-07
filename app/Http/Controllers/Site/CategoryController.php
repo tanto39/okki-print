@@ -103,6 +103,15 @@ class CategoryController extends Controller
         // Items
         $items = $this->getItems($category, 1, $request);
 
+        // Paginate
+        $requestUri = $request->getRequestUri();
+        $page = $request->input('page', 1);
+        $countItems = $items->count();
+        $itemLinks = $this->setPaginate($requestUri, $page, $countItems);
+
+        // Get items for current page
+        $items = $this->getCurrentPageItems($request, $items, $page, $countItems);
+
         $items = $this->handleItemsArray($items);
 
         // Set sort property
@@ -113,11 +122,6 @@ class CategoryController extends Controller
                 $items = $this->setSortByProps($items, $arSortProp, $request);
         }
 
-        $itemsLink = $this->arrayPaginate($request, $items);
-
-        // Get items for current page
-        $items = $this->getCurrentPageItems($request, $items);
-
         // View
         return view('public/catalog/category', [
             'result' => $category,
@@ -125,10 +129,9 @@ class CategoryController extends Controller
             'properties' => $properties,
             'sortProps' => $sortProps,
             'arSortProp' => $arSortProp,
-            'itemsLink' => $itemsLink,
+            'itemLinks' => $itemLinks,
             'template' => $template
         ]);
-
     }
     /**
      * Show blog categories
@@ -173,19 +176,25 @@ class CategoryController extends Controller
                 $category['children'][$key] = $this->handleCategoryArray($child);
 
         // Items
+        // Items
         $items = $this->getItems($category, 1, $request);
-        $items = $this->handleItemsArray($items);
 
-        $itemsLink = $this->arrayPaginate($request, $items);
+        // Paginate
+        $requestUri = $request->getRequestUri();
+        $page = $request->input('page', 1);
+        $countItems = $items->count();
+        $itemLinks = $this->setPaginate($requestUri, $page, $countItems);
 
         // Get items for current page
-        $items = $this->getCurrentPageItems($request, $items);
+        $items = $this->getCurrentPageItems($request, $items, $page, $countItems);
+
+        $items = $this->handleItemsArray($items);
 
         return view('public/catalog/categories', [
             'result' => $category,
             'template' => $template,
             'items' => $items,
-            'itemsLink' => $itemsLink
+            'itemLinks' => $itemLinks
         ]);
     }
 
