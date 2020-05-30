@@ -152,7 +152,7 @@ class ItemController extends Controller
             $item['preview_img'] = $this->createPublicImgPath(unserialize($item['preview_img']));
 
         if(isset($item['properties']))
-            $item['properties'] = $this->handlePropertyForPublic($item['properties']);
+            $item = $this->handlePropertyForPublic($item)[0];
 
         return $item;
     }
