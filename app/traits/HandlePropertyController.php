@@ -435,9 +435,8 @@ trait HandlePropertyController
         $arItems = [];
 
         $arItems = Item::with('category')->whereIn('id', $arItemId)
-            ->orderby('order', 'asc')->orderby('updated_at', 'desc');
-
-        $arItems = $arItems->select(['id', 'title', 'preview_img', 'properties', 'slug', 'is_product', 'category_id'])
+            ->orderby('order', 'asc')->orderby('updated_at', 'desc')
+            ->select(['id', 'title', 'preview_img', 'properties', 'slug', 'is_product', 'category_id'])
             ->get()->toArray();
 
         foreach ($arItems as $key=>$item) {
