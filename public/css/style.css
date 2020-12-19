@@ -487,6 +487,10 @@ p.age-title{
     padding: 0.1em 1em;
     margin: 0.1em;
 }
+button.category-out{
+    padding: 0.2em 1em;
+    margin: 1em;
+}
 .age-man{background: #7fa0bd;}
 .age-woman{background: #ea6c9b;}
 .age-boy{background: #7fcc7f;}

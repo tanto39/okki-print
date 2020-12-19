@@ -8,7 +8,7 @@
             </thead>
             <tbody>
                 @foreach($propGroup as $propId=>$property)
-                    @if($property['id'] !== PROP_SHOPLINK_ID && $property['id'] !== PROP_SHOPLINK2_ID && !empty($property['value']))
+                    @if($property['id'] !== PROP_SHOPLINK_ID && $property['id'] !== PROP_SHOPLINK2_ID && $property['id'] !== PROP_SHOPLINK3_ID && !empty($property['value']))
                     <tr>
                         @if($property['type'] == PROP_TYPE_IMG)
                         <td class="no-display">{{$property['title']}}</td>

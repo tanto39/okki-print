@@ -3,11 +3,11 @@
 @section('content')
     <div class="container main">
 
-        <div class="item-page product-detail" data-shop="{{$result['properties'][PROP_GROUP_NAME_ALL][PROP_SHOPLINK_ID]['value'] ?? ''}}" data-shop2="{{$result['properties'][PROP_GROUP_NAME_ALL][PROP_SHOPLINK2_ID]['value'] ?? $result['properties'][PROP_GROUP_NAME_ALL][PROP_SHOPLINK_ID]['value']}}" data-cat-id="{{$result['category']['parent_id'] ?? ''}}">
+        <div class="item-page product-detail" data-shop="{{$result['properties'][PROP_GROUP_NAME_ALL][PROP_SHOPLINK_ID]['value'] ?? ''}}" data-shop2="{{$result['properties'][PROP_GROUP_NAME_ALL][PROP_SHOPLINK2_ID]['value'] ?? $result['properties'][PROP_GROUP_NAME_ALL][PROP_SHOPLINK_ID]['value']}}" data-shop3="{{$result['properties'][PROP_GROUP_NAME_ALL][PROP_SHOPLINK3_ID]['value'] ?? 'https://okki.myprintbar.ru/futbolki/'}}" data-cat-id="{{$result['category']['parent_id'] ?? ''}}">
             {{-- Breadcrumbs include --}}
             @include('public.partials.breadcrumbs')
             <main itemscope itemtype="http://schema.org/Product">
-                <h1 itemprop="name">{{$result['title']." ".$template->contacts['companyWhere']}}</h1>
+                <h1 itemprop="name">{{$result['title']}}</h1>
                 <div class="product">
 
                     <div class="product-wrap flex">
@@ -26,6 +26,8 @@
 
                             {{-- Properties include --}}
                             @include('public.partials.properties')
+							
+							<button class="order-button category-out">Посмотреть еще товары на тему "{{$result['title']}}"</button>
                         </div>
 
                         {{--Include Slider--}}

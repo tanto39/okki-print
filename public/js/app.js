@@ -224,6 +224,9 @@ var enterShop = {
             defaultLinkArray[3] = catBoy;
             src = defaultLinkArray.join('/');
         }
+		if (button.hasClass('category-out')){
+            src = $('.product-detail').attr('data-shop3');
+        }
 
         window.open(src, '_blank');
     },
