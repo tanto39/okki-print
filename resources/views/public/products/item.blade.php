@@ -47,7 +47,7 @@
                     </div>
                     <button class="order-button size-table">Таблица размеров</button>
 
-                    <div class="product-adv flex"><i class="glyphicon glyphicon-thumbs-up"></i> <p>Качественная ткань - натуральный хлопок или дышащая и экологичная микрофибра! Сублимационная долговечная печать - краска заносится внутрь волокон навсегда.</p></div>
+                    <div class="product-adv flex"><i class="glyphicon glyphicon-thumbs-up"></i> <p>Качественная дышащая и экологичная ткань! Сублимационная долговечная печать - краска заносится внутрь волокон навсегда.</p></div>
                     <div class="full_content" itemprop="description">{!! $result['full_content'] !!}</div>
 
                 </div>
@@ -56,7 +56,11 @@
             <div class="video">
                 <h3>Видео с демонстрацией изделий и производства</h3>
                 <iframe width="700" height="400" src="https://www.youtube.com/embed/MB20vEU3oy0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
+				<div class="alert alert-info">
+				<p>Информация, представленная на сайте, может быть неактуальна и не является публичной офертой. Часть изделий из хлопка может быть недоступна в продаже. Для просмотра точных характеристик и цены перейдите в карточку товара в интернет-магазине, нажав на кнопку "Подробнее о товаре".</p>
+				<button class="order-button callback_content age-default"><span>Подробнее о товаре</span></button>
+				</div>
+			</div>
 
             {{-- Reviews include --}}
             @include('public.partials.reviews')

@@ -63,6 +63,9 @@
     <div class="container video">
         <h3>Видео с демонстрацией изделий и производства</h3>
         <iframe width="700" height="400" src="https://www.youtube.com/embed/MB20vEU3oy0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-</section>
+		<div class="alert alert-info">
+		<p>Информация, представленная на сайте, может быть неактуальна и не является публичной офертой. Для просмотра точных характеристик и цены перейдите в карточку товара в интернет-магазине, нажав на кнопку "Подробнее".</p>
+		</div>
+	</div>
+	</section>
 @endsection
