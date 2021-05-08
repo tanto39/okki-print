@@ -379,7 +379,7 @@ ul.pagination{padding:0;}
     font-size: 1.7em;
 }
 .landing-section-color{background: #ccc;}
-.alert-info{margin:1em 0;padding:0.5em;}
+.alert-info{margin:1em 0;padding:0.5em 1em;}
 .alert-info p{margin:0;}
 .alert-info .order-button{padding: 0 0.5em; margin: 0.4em auto;}
 .alert-info .order-button span{padding:0;}
@@ -620,6 +620,7 @@ button.category-out{
     border: 1px solid #4b80ed;
 }
 .callback:hover{background: #ffffff;}
+a.callback:hover, a.collback:active, a.collback:visited, a.collback:focus{text-decoration:none;}
 .form-zakaz textarea{width: 100%}
 .form-zakaz input, .form-zakaz textarea{margin: 0.3em 0;border: 1px solid #2b586b;}
 .form-pd input{
