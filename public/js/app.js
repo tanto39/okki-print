@@ -194,8 +194,8 @@ var enterShop = {
      */
     openShop: function (button) {
         if ($('.product-detail').attr('data-cat-id') == 6) {
-            var catMan = 'muzhskiye-futbolki';
-            var catWoman = 'zhenskiye-futbolki';
+            var catMan = 'muzhskiye';
+            var catWoman = 'zhenskiye';
             var catGirl = 'detskiye-futbolki-dlya-devochek';
             var catBoy = 'detskiye-futbolki-dlya-machikov';
         }
@@ -204,21 +204,21 @@ var enterShop = {
         var defaultLinkArray = src.split('/');
         var defaultLinkArray2 = src2.split('/');
 
-        if (button.hasClass('age-woman') && defaultLinkArray[3] == catMan){
+        if (button.hasClass('age-woman') && defaultLinkArray[3].includes(catMan)){
             src = src2;
         }
-        if (button.hasClass('age-man') && defaultLinkArray[3] == catWoman){
+        if (button.hasClass('age-man') && defaultLinkArray[3].includes(catWoman)){
             src = src2;
         }
         if (button.hasClass('age-girl')){
-            if (defaultLinkArray[3] == catMan)
+            if (defaultLinkArray[3].includes(catMan))
                 defaultLinkArray[4] = defaultLinkArray2[4];
 
             defaultLinkArray[3] = catGirl;
             src = defaultLinkArray.join('/');
         }
         if (button.hasClass('age-boy')){
-            if (defaultLinkArray[3] == catWoman)
+            if (defaultLinkArray[3].includes(catWoman))
                 defaultLinkArray[4] = defaultLinkArray2[4];
 
             defaultLinkArray[3] = catBoy;
